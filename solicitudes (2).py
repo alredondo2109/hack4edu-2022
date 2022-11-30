@@ -1,3 +1,5 @@
+# YD REPENTE  (Universidad Pontificia de Salamanca)
+
 # -*- coding: utf-8 -*-
 """
 Created on Fri Sep 30 10:22:37 2022
@@ -11,7 +13,6 @@ import pywhatkit
 import webbrowser
 import datetime
 import wikipedia
-
 
 
 
@@ -80,7 +81,7 @@ def trasformar_audio_en_texto():
             return "sigo esperando"
 
 
-#Vamos a crear una función para que yulexa pueda ser escuchada
+
 def hablar(mensaje):
     #encendemos el motor de pyttsx3
     engine = pyttsx3.init()
@@ -96,7 +97,7 @@ for voz in engine.getProperty("voices"):
 
 
 
-#Función para que yulexa informe el día de la semana
+
 def solicitar_dia():
     #creamos una variable que contenga el día
     dia = datetime.date.today()
@@ -123,7 +124,7 @@ def solicitar_hora():
     hablar(hora)
 
 
-def saludo_yulexa():
+def saludo_ydrepente():
     
     #hora
     hora = datetime.datetime.now()
@@ -144,7 +145,6 @@ def saludo_yulexa():
 
     
 def preguntas_iniciales():
-    
     hablar('Espera 5 segundos y dime ¿cúal es tu nombre?')
     global nombre
     nombre = trasformar_audio_en_texto().lower()
@@ -188,38 +188,82 @@ def preguntas_iniciales():
     respuestas = [p1,p2,p3,p4]
     print(respuestas)
     
-    if respuestas[0] == 0 and respuestas[1] ==0  and respuestas[2] and respuestas[3] == 0:
+    if respuestas[0] == 0 and respuestas[1] ==0  and respuestas[2] ==0 and respuestas[3] == 0:
         hablar("Te propongo realizar el siguiente ejercicio de yoga")
         webbrowser.open("https://www.youtube.com/watch?v=i4dwATyTcCk&ab_channel=AnabelOtero")
+
         
-    if respuestas[0] == 0 and respuestas[1] ==0  and respuestas[2] and respuestas[3] == 1:
-        hablar("Te propongo realizar el siguiente ejercicio de respiración 4x4")
+    if respuestas[0] == 0 and respuestas[1] ==0  and respuestas[2] ==0 and respuestas[3] == 1:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+        hablar("Hasta la proxima")
+        
+    
+    if respuestas[0] == 0 and respuestas[1] ==0 and respuestas[2] ==1 and respuestas[3] == 0:
+        hablar("Te propongo escuchar el siguiente video para calmar tu ansiedad")
+        webbrowser.open("https://www.youtube.com/watch?v=tA2kT8eSjtg")
+        
+        
+    if respuestas[0] == 0 and respuestas[1] ==0  and respuestas[2]==1 and respuestas[3] == 1:
+        hablar("Te propongo escuhar el siguiente vídeo, como vencer el desanimo")
+        webbrowser.open("https://www.youtube.com/watch?v=OHanOu-nUrQ")
+        
+        
+    if respuestas[0] == 0 and respuestas[1] ==1  and respuestas[2] ==0 and respuestas[3] == 0:
+        hablar("Te propongo realizar el siguiente video: ")
+        webbrowser.open("https://www.youtube.com/watch?v=73sEuw3LYaM")
+        
+        
+    if respuestas[0] == 0 and respuestas[1] ==1  and respuestas[2]==1 and respuestas[3] == 0:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+        
+        
+    if respuestas[0] == 0 and respuestas[1] ==1  and respuestas[2] == 1 and respuestas[3] == 1:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+        
+            
+    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2]==0 and respuestas[3] == 0:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+        
+        
+    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2]==0 and respuestas[3] == 1:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+        
+            
+    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2]==1 and respuestas[3] == 0:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
         
     
-    if respuestas[0] == 0 and respuestas[1] ==1 and respuestas[2] and respuestas[3] == 0:
-        hablar("Te propongo escuchar el siguiente video")
-        webbrowser.open("https://www.youtube.com/watch?v=zRvsRjqi5yE")
-        
-    if respuestas[0] == 0 and respuestas[1] ==1  and respuestas[2] and respuestas[3] == 1:
-        hablar("Te propongo escuhar el siguiente vídeo")
-        webbrowser.open("")
-        
-    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2] and respuestas[3] == 0:
-        hablar("Te propongo realizar el siguiente ejercicio de respiración 4x4")
+    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2]==1 and respuestas[3] == 1:
+        hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
         
-    if respuestas[0] == 1 and respuestas[1] ==0  and respuestas[2] and respuestas[3] == 1:
-        hablar("Te propongo realizar el siguiente ejercicio de respiración 4x4")
-        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
         
-    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2] and respuestas[3] == 0:
-        hablar("Te propongo realizar el siguiente ejercicio de respiración 4x4")
-        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
-            
-    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2] and respuestas[3] == 1:
-        hablar("Te propongo realizar el siguiente ejercicio de respiración 4x4")
-        webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2]==0 and respuestas[3] == 0:
+         hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+         
+         
+    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2]==0 and respuestas[3] == 1:
+         hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+         
+         
+    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2]==1 and respuestas[3] == 0:
+         hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+         
+    if respuestas[0] == 1 and respuestas[1] ==1  and respuestas[2]==1 and respuestas[3] == 1:
+         hablar("Te propongo realizar el siguiente ejercicio de respiración 4 por 4")
+         webbrowser.open("https://www.youtube.com/watch?v=DmJvQEjyQFs")
+         
+         
+    
         
         
         
@@ -233,11 +277,12 @@ def preguntas_ansiedad():
     
 def centro_solicitudes():
     
-    # 1. Activamos el saludo de yulexa
-    saludo_yulexa()
+    # 1. Activamos el saludo de ydrepente
+    saludo_ydrepente()
     
     #2 preguntas iniciales
     preguntas_iniciales()
+    
     
     # 2. creamos una variable que inicie el loop
     comenzar = True
@@ -272,7 +317,7 @@ def centro_solicitudes():
             #setlang me permite establecer el lenguaje de busqueda de wikipedia
             wikipedia.set_lang('es')
             resultado = wikipedia.summary(solicitud, sentences=4)
-            hablar('La profe Yuli ¡odia wikipedia pero, deja te cuento que:')
+            hablar('Te cuento que:')
             hablar(resultado)
             continue
         elif 'busca en internet' in solicitud:
@@ -286,12 +331,9 @@ def centro_solicitudes():
             pywhatkit.playonyt(solicitud)
             continue
        
-        elif 'luis' in solicitud:
-            hablar("luis no viene a clase.. ¿quieres que le avise?")
-        elif 'bucaramanga' in solicitud:
-            hablar("La ciudad mas linda de colombia. Tambien venden las hamburguesas mas delis")
-        elif 'adios' in solicitud:
-            hablar("chauuu, cualquier cosa me avisas")
+
+        elif 'adiós' in solicitud:
+            hablar("chaoo, cualquier cosa me avisas")
             break
             
 centro_solicitudes()
